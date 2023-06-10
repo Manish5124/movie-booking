@@ -1,0 +1,96 @@
+/* #Signupform
+{
+  background-color: #211f1f;
+  margin-top: 2px;
+  margin-bottom: 2px;
+} */
+ /* .content{
+  height:100vh;
+
+}
+
+.btn-dark{
+  background:#673AB7 !important;
+}
+
+
+#parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7%;
+    margin-left: 40%;
+    margin-bottom: 7%;   
+     box-shadow: 0 5px 9px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+.marginright{
+    margin-right:5px;
+}  
+
+
+mat-card {
+    width: 300px;
+  }
+
+#card{
+    text-align: center;
+
+} */
+
+#parent{
+
+  margin-top: 40px;
+  margin-bottom: 50px;
+  
+  }
+  mat-card {
+    max-width: 600px;
+    margin: 2em auto;
+    text-align: center;
+    max-height: 600px;
+    /* background-color: #e8f3fc; */
+    background-color: rgba(121, 119, 119, 0.731);
+    /* background-color: #211f1f; */
+    border-radius: 20px !important;
+    }
+    mat-mdc-form-field-infix ng-tns-c3899553609-0{
+      border-color: white;
+      color: white;
+    }
+  
+    .header {
+    text-align: center;
+    color: white;
+    }
+    .full-width {
+    width: 80%;
+    }
+    .button-row {
+    padding-top: 5px;
+    }
+    /* .button-row a {
+    margin-right: 8px;
+    text-align: center;
+    } */
+    .forget-password {
+    padding-left: 0px;
+    }
+    .emailInput {
+    padding-top: 10px;
+    }
+    .contentBody {
+    padding: 60px 1rem;
+    /* background: #1b6ca8; */
+    background: white;
+    display: block;
+    }
+    .text-link>a {
+    /* float: right; */
+    /* padding-right: 60px; */
+    color: white;
+      font-size: medium;
+    text-decoration: none;
+    }
+

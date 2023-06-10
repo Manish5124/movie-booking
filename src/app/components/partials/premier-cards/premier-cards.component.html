@@ -1,0 +1,30 @@
+<section class="premier">
+    <div class="premierimg">
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120:q-80/premiere-banner-web-collection-202208191200.png" alt="">
+    </div>
+    <div class="text">
+        <div class="heading">
+            Premieres
+        </div>
+       <p class="text-white">
+        Brand new releases every Friday
+       </p> 
+    </div>
+<div id="main">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let movie of movies" class="slide" >
+        <mat-card appearance="outlined">
+            <div id="movie">
+                <img mat-card-image [src]="movie.image" alt="Movie Poster">
+            </div>
+            <mat-card-content>
+                <p><b>{{ movie.name }}</b><p>
+                <p>Theater: {{ movie.theater }}</p>
+                <p>Price: {{ movie.price }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    </ngx-slick-carousel>
+</div>
+</section>

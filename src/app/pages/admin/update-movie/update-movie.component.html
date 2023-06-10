@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Update Movie Details</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="form parent" [formGroup]="updateMovieForm" >
+           <mat-form-field class="full-width">
+                  <mat-label>Movie Name</mat-label>
+                  <input  matInput  placeholder="Movie name"  name="movieName" formControlName="movieName"  value={{movie.movieName}} />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Movie Image</mat-label>
+                <input  matInput   type="text" placeholder="Movie Image" name="movieImage" formControlName="movieImage"  value={{movie.movieImage}} required>
+             </mat-form-field>
+            <mat-form-field class="full-width">
+                  <mat-label>Theater Name</mat-label>
+                  <input  matInput  placeholder="Theater Name" name="theaterName" formControlName="theaterName"  value={{movie.theaterName}} required>
+            </mat-form-field>
+         
+            <mat-form-field class="full-width">
+                  <mat-label>Movie Price</mat-label>
+                  <input  matInput   type="number" placeholder="Movie Price" name="moviePrice" formControlName="moviePrice" value={{movie.moviePrice}} >
+            </mat-form-field>
+
+        </form>
+    
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button (click)="submitForm()" color="primary" [mat-dialog-close]="true" cdkFocusInitial>Update movie</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

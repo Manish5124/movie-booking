@@ -1,0 +1,59 @@
+
+<table *ngIf="flag" mat-table [dataSource]="ticketsData" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="Movie Id">
+        <th mat-header-cell *matHeaderCellDef>Movie Id</th>
+        <td mat-cell *matCellDef="let element"> {{element.movie_fk}} </td>
+      </ng-container>  
+
+    <ng-container matColumnDef="Ticket Id">
+      <th mat-header-cell *matHeaderCellDef>Ticket Id</th>
+      <td mat-cell *matCellDef="let element"> {{element.transactionId}} </td>
+    </ng-container>
+ 
+    <ng-container matColumnDef="User Name">
+      <th mat-header-cell *matHeaderCellDef>User Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Movie Name">
+      <th mat-header-cell *matHeaderCellDef>Movie Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Theater Name">
+      <th mat-header-cell *matHeaderCellDef>Theater Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.theaterName}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="bookedSeats">
+        <th mat-header-cell *matHeaderCellDef>bookedSeats</th>
+        <td mat-cell *matCellDef="let element"> {{element.bookedSeats}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let element" (click)="deleteById(element.transactionId)"><mat-icon>delete</mat-icon> </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  
+  <div *ngIf="!flag">
+      <!-- <h1>there is no tickets available</h1> -->
+      <div class="no-tickets-booked-container">
+        <h2 class="no-tickets-booked-title">There are no tickets booked</h2>
+        <p class="no-tickets-booked-description">Please check back later for booked tickets.</p>
+      </div>
+
+  </div>
+  <div class="close-button-container">
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  

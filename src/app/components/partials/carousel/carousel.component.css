@@ -1,0 +1,28 @@
+/* .carousel-item>img{
+    align-items: center;
+    height: 500px;
+       display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        width: 50%;
+       
+}
+
+#carouselExampleFade{
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+} */
+
+
+.c-item {
+        height: 550px;
+      }
+      
+      .c-img {
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6);
+      }
+

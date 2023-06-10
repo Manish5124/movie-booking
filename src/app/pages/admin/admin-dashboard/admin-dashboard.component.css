@@ -1,0 +1,14 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    margin-top: 30px ;
+    margin-left: 50px;
+    align-items: center;
+    border: hidden;
+
+  
+}
+/* .searchbar> mat-form-field{
+    background-color: white;
+} */

@@ -1,0 +1,40 @@
+<section class="movies">
+<h1 >Recommended Movies</h1>
+<div id="main">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let movie of movies" class="slide" >
+        <mat-card appearance="outlined">
+            <div id="movie" class="hover01 column">
+                
+                <figure> <img mat-card-image [src]="movie.image" alt="Movie Poster" ></figure>
+            </div>
+            <mat-card-content>
+                <p><b>{{ movie.name }}</b><p>
+                <p>Theater: {{ movie.theater }}</p>
+                <p>Price: {{ movie.price }}</p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card-footer *ngIf='flag'>
+            <div class="d-flex justify-content-around mb-1">
+                <button class="ml-3" mat-small  mat-raised-button color="primary">modify</button>
+                <!-- <button   mat-small mat-stroked-button color="warn">Warn</button> -->
+                <!-- <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>more_vert</mat-icon>
+                  </button> -->
+                  <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                    <mat-icon>menu</mat-icon>
+                  </button>
+                <button class="mr-3" mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+            </div>
+        </mat-card-footer>
+    </div>
+    </ngx-slick-carousel>
+</div>
+
+
+
+</section>
+

@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 89vh; */
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .footer {
+
+    background-color: black;
+    color: red;
+    /* background-color:rgb(86, 163, 239);
+    color: white; */
+    padding: 20px 0;
+    text-align: center;
+
+    /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: red; */
+  /* color: white; */
+ 
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .text {
+    font-size: 14px;
+  }
+  

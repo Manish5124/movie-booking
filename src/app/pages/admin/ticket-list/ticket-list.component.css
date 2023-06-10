@@ -1,0 +1,37 @@
+.demo-table {
+    width: 100%;
+  }
+  .no-tickets-booked-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .no-tickets-booked-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .no-tickets-booked-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  
+
+  .close-button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+  }
+  
+  .close-button {
+    background-color: transparent;
+    color: #999;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .close-button:hover {
+    color: #f00;
+  }
+  

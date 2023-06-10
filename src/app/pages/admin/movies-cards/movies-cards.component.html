@@ -1,0 +1,50 @@
+<section class="movies">
+    <h1 >Recommended Movies</h1>
+    <div id="main">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+            (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let movie of movies" class="slide" >
+                <mat-card appearance="outlined">
+                    <div class="rubber_stamp blur-background" *ngIf="movie.availableSeats==0">SOLD OUT</div>
+                    <div id="movie" >
+                        <img mat-card-image src={{movie.movieImage}} alt="Movie Poster">
+                    </div>
+                    <mat-card-content>
+                        <p><b>{{ movie.movieName }}</b><p>
+                        <p>Theater: {{ movie.theaterName }}</p>
+                        <p>Price: {{ movie.moviePrice }}</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card-footer *ngIf='flag'>
+                    
+                    <div class="d-flex justify-content-center mb-1">
+                        <div style="margin-right: auto;">
+                            <button mat-mini-fab class="modify-button" color="primary" (click)="openTicketList(movie.id)" aria-label="Example icon button with a menu icon">
+                                <mat-icon>menu</mat-icon>
+                              </button>
+                        </div>
+                        <div>
+                          
+                          <button mat-mini-fab class="menu-button mx-1" (click)="openDialog(movie.id)" aria-label="Example icon button with a menu icon">
+                            <mat-icon>edit</mat-icon>    
+                        </button>
+                          <button color="warn" mat-mini-fab class="delete-button" color="warn" (click)="deleteMovie(movie.id)" aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                      
+                </mat-card-footer>
+                <mat-card-footer  *ngIf='!flag'>
+                    <div class="bookmovie">
+                        <button mat-raised-button  (click)="openBookTicket(movie.id)" color="primary" [disabled]="movie.availableSeats<=0" >Book ticket</button>
+                        <!-- <button  mat-fab color="primary" (click)="openTicketList(movie.id)" >
+                          
+                        </button> -->
+                    </div>
+                   
+                 </mat-card-footer>   
+            </div>
+        </ngx-slick-carousel>
+    </div>
+    </section>

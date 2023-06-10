@@ -1,0 +1,74 @@
+#parent{
+    /* width: 90% !important; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    background-color: gainsboro;
+    /* overflow-x: hidden; */
+    /* height: 200vh; */
+}
+
+
+/* mat-card-content{
+    border-style: solid;
+    border-color: red green blue yellow;
+    width: 162px;
+    
+} */
+
+img{
+    /* width: 162px; */
+    width: 100%;
+    /* margin: 20px; */
+    height:272px;
+
+}
+
+mat-card {
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: hidden;
+}
+
+.slidebar{
+    background-color: gainsboro;
+}
+.slidebar>h1{
+    margin-left: 40px;
+}
+
+#movie{
+    border-radius: 10px;
+}
+
+#main{
+      
+        display: flex;
+        justify-content: center;
+        width: 100%;
+}
+
+ngx-slick-carousel {
+    width: 94% !important;
+}
+
+
+mat-card-content>p{
+    margin: 0px 0px 4px;
+    word-break: break-word;
+    color: rgb(34, 34, 34);
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.33;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
