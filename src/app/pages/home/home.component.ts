@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 
-  title = 'ng-carousel-demo';
+  title = 'home component';
 
   movies = [
     {

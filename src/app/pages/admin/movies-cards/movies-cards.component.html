@@ -1,7 +1,7 @@
 <section class="movies">
     <h1 >Recommended Movies</h1>
     <div id="main">
-        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" 
             (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
             <div ngxSlickItem *ngFor="let movie of movies" class="slide" >
                 <mat-card appearance="outlined">

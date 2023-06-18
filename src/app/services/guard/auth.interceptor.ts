@@ -13,8 +13,7 @@ import { AuthService } from '../auth.service';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private authService:AuthService) {
-    console.log("interceptor is calling.....");
-  }
+      }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
   

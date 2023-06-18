@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   
+  title = "login";
   Role:any;
   login: any;
   form;
@@ -55,9 +56,9 @@ export class LoginComponent implements OnInit {
 
       this.authService.isLoggedIn$.next(true);
       this.authService.getUserData(this.form.value.username,this.form.value.password).subscribe((v)=>{
-     
-        console.log("user data is=>",v);
-          let data = JSON.parse(v);
+             console.log("user data is=>",v);
+          // let data = JSON.parse(v);
+          let data = v;
           this.authService.userData$.next(data);
           console.log("data id =",data);
         console.log("v.role => ",data.role);
@@ -93,31 +94,6 @@ export class LoginComponent implements OnInit {
          showConfirmButton: false,timer: 1500 })
       })
 
-
-
-      // this.authService.fetchRole(this.form.value.username,this.form.value.password).subscribe(role=>{
-      //     console.log("role is=>",role);
-      //   this.Role = role;
-    //     localStorage.setItem('role',this.Role);
-       
-    //     // if(role=="ADMIN")
-    //     {
-    //       // this.router.navigate(['/admin']);
-    //         //  }
-    //     else if(role=="USER")
-    //     {
-
-    //       this.router.navigate(['/users']);
-    //     }
-    //     console.log("fetchRole is =>",this.Role)
-        
-    //     });
-           
-    // },
-    // (error)=>{
-    //   console.log("error=>",error);
-    // }
-    // )
   })
 }
 

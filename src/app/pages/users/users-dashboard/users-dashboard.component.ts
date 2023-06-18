@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./users-dashboard.component.css']
 })
 export class UsersDashboardComponent {
-
+  title = "UserDashboard";
 }

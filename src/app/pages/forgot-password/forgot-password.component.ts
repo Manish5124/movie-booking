@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ForgotPasswordComponent  implements OnInit  {
 
+  title = 'ForgotPassword'
   form;
   constructor(fb: FormBuilder,private authService:AuthService)
   {

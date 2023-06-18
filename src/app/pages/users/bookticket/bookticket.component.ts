@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./bookticket.component.css']
 })
 export class BookticketComponent implements OnInit {
+  title= "Book ticket";
   movie:Movies = new Movies();
   id:any;
   public  ticketForm!: FormGroup;
@@ -40,7 +41,7 @@ export class BookticketComponent implements OnInit {
       this.ticketForm.controls['movieName'].setValue(this.movie.movieName);      
       this.ticketForm.controls['theaterName'].setValue(this.movie.theaterName);
       // console.log("ticket value =>",this.ticketForm.value);
-      this.service.addTicket(this.ticketForm.value,localStorage.getItem('token')).subscribe(res=>{
+      this.service.addTicket(this.ticketForm.value).subscribe(res=>{
         Swal.fire({ 
           // position: 'top-end', 
         icon: 'success',

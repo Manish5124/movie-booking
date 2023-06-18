@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class AddMovieComponent implements OnInit{
 
+  title = "AddMovieComponent";
   movie: Movies =new  Movies();
 
   constructor(private service:AdminService,private fb:FormBuilder){}

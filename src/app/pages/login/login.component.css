@@ -6,6 +6,9 @@ margin-top: 84px;
 margin-bottom: 83px;
 
 }
+mat-form-field{
+  color: white !important;
+}
 mat-card {
   max-width: 600px;
   margin: 2em auto;

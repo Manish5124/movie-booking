@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./singup.component.css']
 })
 export class SingupComponent implements OnInit {
+  title = "signup";
   SignupForm: FormGroup = new FormGroup({});
   user!: Users;
 

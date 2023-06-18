@@ -40,23 +40,23 @@ export class AuthService {
 
     const body = JSON.stringify(user);
     console.log(body)
-    // return this.httpClient.post<Object>(user_API+'/register',body,{'headers':headers,responseType:'text' as 'json'});
-    return this.httpClient.post<Object>(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/user`,body,{'headers':headers,responseType:'text' as 'json'});
+    return this.httpClient.post<Object>(user_API+'/register',body,{'headers':headers,responseType:'text' as 'json'});
+    // return this.httpClient.post<Object>(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/user`,body,{'headers':headers,responseType:'text' as 'json'});
   }
 
   generateToken(user: any){
     const body = JSON.stringify(user);
     console.log(body)
-      // return this.httpClient.post(user_API+'/login',body,{'headers':headers,responseType:'text' as 'json'})
-      return this.httpClient.post(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/userlogin`,body,{'headers':headers,responseType:'text' as 'json'})
+      return this.httpClient.post(user_API+'/login',body,{'headers':headers,responseType:'text' as 'json'})
+      // return this.httpClient.post(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/userlogin`,body,{'headers':headers,responseType:'text' as 'json'})
 
     }
 
     getUserData(username:any,password:any):Observable<any>
     {
-      // return this.httpClient.get(user_API+'/getUser?username='+`${username}`+'&password='+`${password}`,{'headers':headers})
+      return this.httpClient.get(user_API+'/getUser?username='+`${username}`+'&password='+`${password}`,{'headers':headers})
       
-      return this.httpClient.get(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/userlogin?username=`+username+'&password='+password,{'headers':headers,responseType:'text'});
+      // return this.httpClient.get(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/userlogin?username=`+username+'&password='+password,{'headers':headers,responseType:'text'});
     }
 
 
@@ -70,8 +70,8 @@ export class AuthService {
   forgotPassword(petName:any,username:any,newPassword:any):Observable<any>
   {
     // https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/forgotpassword
-    // return this.httpClient.post(user_API+'/forgotPassword?petName='+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
-    return this.httpClient.post(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/forgotpassword?petName=`+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
+    return this.httpClient.post(user_API+'/forgotPassword?petName='+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
+    // return this.httpClient.post(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/forgotpassword?petName=`+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
   }
 }
 

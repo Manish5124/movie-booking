@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 
 export class HeaderComponent implements OnInit {
 
+  title = "headerComponent";
   isLogedin:boolean = false;
   panelOpenState = false;
   // userData: Array<any> = [];

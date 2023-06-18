@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class MoviesCardsComponent implements OnInit {
 
+  title = "movie card component";
   // movies: Movies =new  Movies();
  flag:any;
   movies: Array<any> = [];
@@ -83,7 +84,7 @@ export class MoviesCardsComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         // Perform the delete operation
-        this.service.deleteMovieById(id,localStorage.getItem('token')).subscribe(res=>{
+        this.service.deleteMovieById(id).subscribe(res=>{
           this.service.getData();
         
         });
@@ -139,9 +140,9 @@ export class MoviesCardsComponent implements OnInit {
   
   slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
    
-  slickInit(e:any) {
-    console.log('slick initialized');
-  }
+  // slickInit(e:any) {
+  //   console.log('slick initialized');
+  // }
      
   breakpoint(e:any) {
     console.log('breakpoint');

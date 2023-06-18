@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class UpdateMovieComponent implements OnInit {
   // movies: Array<any> = [];
+  title = 'update-movie-details';
   movie:Movies = new Movies();
   id:any;
   // public  updateMovieForm!: FormGroup;
@@ -66,7 +67,7 @@ export class UpdateMovieComponent implements OnInit {
     // this.updateMovieForm.controls['movieName'].setValue(this.movie.movieName);      
     // this.updateMovieForm.controls['theaterName'].setValue(this.movie.theaterName);
     // this.updateMovieForm.controls['moviePrice'].setValue(this.movie.moviePrice);
-      this.service.updateMovie(this.id,this.updateMovieForm.value,localStorage.getItem('token')).subscribe(res=>{
+      this.service.updateMovie(this.id,this.updateMovieForm.value).subscribe(res=>{
         console.log("successfully updated",res);
         this.service.getData();
         Swal.fire({ 

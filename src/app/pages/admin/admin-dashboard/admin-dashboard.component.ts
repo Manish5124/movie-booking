@@ -10,6 +10,8 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
+
+    title = "AdminDashboardComponent";
   searchText:string="";
 
   constructor(public dialog: MatDialog,private service:AdminService) {}

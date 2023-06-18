@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class TicketListComponent implements OnInit{
 
+    title = "Ticket-list-component"
   // ticketsData:Tickets = new Tickets();
   ticketsData: Array<any> = [];
   id:any;
@@ -31,7 +32,7 @@ export class TicketListComponent implements OnInit{
 
 
     getTicketData(){
-      this.service.getAllTicketsById(this.id,localStorage.getItem('token'))
+      this.service.getAllTicketsById(this.id)
     .subscribe((res:any)=>{
       
           this.ticketsData = res; 
@@ -48,7 +49,7 @@ export class TicketListComponent implements OnInit{
     }
   deleteById(id:any)
   {
-    this.service.deleteTicketsById(id,localStorage.getItem('token')).subscribe(res=>{
+    this.service.deleteTicketsById(id).subscribe(res=>{
       console.log("delete ticket by id=>",res);
       this.getTicketData();
       Swal.fire({ 

@@ -18,4 +18,11 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should have title "FooterComponent"', () => {
+
+    const fixer = TestBed.createComponent(FooterComponent);
+    const check = fixer.componentInstance;
+    expect(check.title).toEqual("FooterComponent");
+  });
 });
