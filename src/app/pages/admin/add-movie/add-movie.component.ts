@@ -31,7 +31,7 @@ export class AddMovieComponent implements OnInit{
     {
       // console.log(this.addMovieForm.value);
 
-      this.service.addMovie(this.addMovieForm.value,localStorage.getItem('token')).subscribe(response=>{
+      this.service.addMovie(this.addMovieForm.value).subscribe(response=>{
         console.log("add movie response=>",response);
         Swal.fire({ 
           // position: 'top-end', 

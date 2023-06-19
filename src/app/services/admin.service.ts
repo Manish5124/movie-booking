@@ -33,7 +33,7 @@ export class AdminService {
   
   } 
 
-  addMovie(movie:any,token:any):Observable<any>{
+  addMovie(movie:any):Observable<any>{
     // const headers = new HttpHeaders().set('Authorization',token);
     // const body = JSON.stringify(loginData);
     // console.log(body)
@@ -72,7 +72,7 @@ export class AdminService {
   }
 
 
-  deleteMovieById(id:any)
+  deleteMovieById(id:any):Observable<any>
   {
    return this.httpClient.delete(Movie_API+'/delete/'+`${id}`,{responseType:'text' }); 
   // return this.httpClient.delete(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/movie/`+`${id}`,{'headers':headers,responseType:'text' });
@@ -80,24 +80,18 @@ export class AdminService {
 
   updateMovie(id:any,newdata:any):Observable<any>
   {
-    // const headers = new HttpHeaders().set('Authorization',token);
-    // return this.httpClient.put(Movie_API+'/updateMovie/'+`${id}`,newdata,{'headers':headers,responseType: 'text'});
-    return this.httpClient.put(Movie_API+'/updateMovie/'+`${id}`,newdata,{responseType: 'text'});
-    
+    return this.httpClient.put(Movie_API+'/updateMovie/'+`${id}`,newdata,{responseType: 'text'});   
     // return this.httpClient.put(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/moviedata/`+`${id}`,newdata,{'headers':headers,responseType: 'text'});
 
   }  
 
-  getAllTicketsById(id:any)
+  getAllTicketsById(id:any):Observable<any>
   {
-    // return this.httpClient.get(Movie_API+'/getAllTicket/'+`${id}`,{responseType: 'json'});
- 
     return this.httpClient.get(Movie_API+'/getAllTicket/'+`${id}`,{'headers':headers,responseType: 'json'});
     // return this.httpClient.get(` https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/ticket/`+`${id}`,{'headers':headers,responseType: 'json'});
-
   }
 
-  deleteTicketsById(id:any)
+  deleteTicketsById(id:any):Observable<any>
   {    
     return this.httpClient.delete(Movie_API+'/deleteTicketsById/'+`${id}`,{responseType:'text' });
        // return this.httpClient.delete(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/deleteticketsbymovieid/`+`${id}`,{'headers':headers,responseType:'text' });  

@@ -48,14 +48,14 @@
 
     <div class="UserIdInput">
         <mat-form-field class="full-width mb-3" appearance="outline">
-        <mat-label>PetName</mat-label>
+        <mat-label>Secret name</mat-label>
         <input class="text-white"
         formControlName="petName"
         matInput
-        placeholder="Enter petName" required
+        placeholder="Enter Secret name" required
         />
         <mat-error *ngIf="!SignupForm.controls['petName'].valid">
-        petName is required
+            Secret name is required
         </mat-error>
         </mat-form-field>
     </div>

@@ -49,23 +49,27 @@ export class TicketListComponent implements OnInit{
     }
   deleteById(id:any)
   {
-    this.service.deleteTicketsById(id).subscribe(res=>{
-      console.log("delete ticket by id=>",res);
-      this.getTicketData();
-      Swal.fire({ 
-        // position: 'top-end', 
-      icon: 'success',
-       title: 'ticket is delete',
-       showConfirmButton: false,timer: 1500 })
 
-      },
-      (error)=>{
-        Swal.fire({ 
-          // position: 'top-end', 
-        icon: 'error',
-         title: 'ticket is not deleted!!',
-         showConfirmButton: false,timer: 1500 })
+    
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to delete the ticket. This action cannot be undone.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#dc3545',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Delete',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform the delete operation
+        this.service.deleteTicketsById(id).subscribe(res=>{
+          console.log("delete ticket by id=>",res);
+          this.getTicketData();
+        });
+      }
       });
+    
   }
   closeDialog(): void {
     this.dialogRef.close();
