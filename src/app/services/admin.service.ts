@@ -48,8 +48,7 @@ export class AdminService {
       
       this.movies$.next(res);
        console.log("movie data is =",res);
-      // console.log("movie data is =",this.movies);
- 
+
     });    
 
   }

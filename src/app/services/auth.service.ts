@@ -60,16 +60,9 @@ export class AuthService {
     }
 
 
-  // fetchRole(username:any,password:any)
-  // {
-    // return this.httpClient.get(user_API+'/getRole?username='+username+'&password='+password,{'headers':headers,responseType:'text'})
-    // return this.httpClient.get(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/userlogin?username=`+username+'&password='+password,{'headers':headers,responseType:'text'})
-  // }
-  
 
   forgotPassword(petName:any,username:any,newPassword:any):Observable<any>
   {
-    // https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/forgotpassword
     return this.httpClient.post(user_API+'/forgotPassword?petName='+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
     // return this.httpClient.post(`https://03sul3fnff.execute-api.us-west-2.amazonaws.com/DeploymentMovie/forgotpassword?petName=`+petName+'&username='+username+'&newPassword='+newPassword,{'headers':headers,responseType:'text' as 'json'})
   }
